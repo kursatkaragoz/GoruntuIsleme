@@ -1,0 +1,22 @@
+clc;clear all;
+I = imread('gelin.jpg');
+J=I;
+oran=30;
+J=gurultuEkle(I,oran);
+mean=MeanFilter_3_3(J);
+median=MedianFilter_3_3(J);
+mean2=MeanFilter_5_5(J);
+median2=MedianFilter_5_5(J);
+
+subplot(2,3,1);
+imshow(I),title('orjinal');
+subplot(2,3,2);
+imshow(J),title('gürültü');
+subplot(2,3,3);
+imshow(mean),title('gürültüye mean 3x3');
+subplot(2,3,4);
+imshow(median),title('gürültüye mean 5x5');
+subplot(2,3,5);
+imshow(mean2),title('gürültüye median 3x3');
+subplot(2,3,6);
+imshow(median2),title('gürültüye median 5x5');

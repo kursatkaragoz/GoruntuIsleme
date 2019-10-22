@@ -1,0 +1,13 @@
+clear;
+clear all;
+I=imread('kýz.jpg');
+J=histeq(I);
+K=histeq(J);
+gurultu =imnoise(I,'salt & pepper',0.02);
+median = medfilt3(gurultu);
+subplot(2,3,1);
+imshow(I);
+subplot(2,3,2);
+imshow(J);
+subplot(2,3,3);
+imshow(K);
